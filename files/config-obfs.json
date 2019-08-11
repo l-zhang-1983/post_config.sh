@@ -1,0 +1,11 @@
+{
+    "server":"216.24.186.62",
+    "server_port":18366,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"zhang2019liang",
+    "timeout":300,
+    "method":"chacha20-ietf-poly1305",
+    "plugin":"obfs-local",
+    "plugin_opts":"obfs=http;obfs-host=www.youku.com"
+}

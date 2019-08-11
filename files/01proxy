@@ -1,0 +1,4 @@
+Acquire::http::Proxy::launchpad.net "http://127.0.0.1:1081";
+Acquire::https::Proxy::launchpad.net "http://127.0.0.1:1081";
+Acquire::http::Proxy::ppa.launchpad.net "http://127.0.0.1:1081";
+Acquire::https::Proxy::ppa.launchpad.net "http://127.0.0.1:1081";
