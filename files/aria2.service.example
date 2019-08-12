@@ -7,7 +7,7 @@ User=USER
 Group=USER
 Type=simple
 # 服务 start/stop 执行脚本(具体执行路径根据自己的目录更改)
-ExecStart=/usr/bin/aria2c --conf-path=${HOME}/.aria2/aria2.conf
+ExecStart=/usr/bin/aria2c --conf-path=/home/USER/.aria2/aria2.conf
 RemainAfterExit=yes
 
 [Install]
