@@ -101,7 +101,14 @@ function gnome_tweaks {
 	sudo apt install -y gnome-tweaks
 }
 
-# 11. 安装google-chrome
+# 11. 安装字体
+function install_fonts {
+	sudo tar -zcvf /etc/fonts/fonts.tar.gz -C /etc/ fonts
+	sudo cp -r files/zh_CN /usr/share/fonts/X11/
+	sudo fc-cache -frv
+}
+
+# 12. 安装google-chrome
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 function chrome {
 	sudo dpkg -i files/google-chrome-stable_current_amd64.deb
