@@ -48,7 +48,7 @@ function setup_privoxy {
 	sudo cp /etc/privoxy/config{,.bak}
 	sudo cp files/config /etc/privoxy/
 	echo "privoxy setup finished, port 1081"
-
+	sudo systemctl restart privoxy
 }
 
 # 5. 配置apt代理
@@ -85,10 +85,34 @@ function aria2 {
 	sudo mv files/aria2.service /etc/systemd/system
 	sudo systemctl enable aria2.service
 	sudo systemctl start aria2.service
+	unzip -d files files/web_ui.zip
+	mv files/web_ui ~/.aria2
+}
+
+# 9. 搜狗拼音输入法
+function sogou {
+	sudo apt install -y fcitx libfcitx-qt0 fcitx-libs-qt libopencc2 fcitx-libs libqtwebkit4
+	im-config -n fcitx
+	sudo dpkg -i files/sogoupinyin_*_amd64.deb
+}
+
+# 10. 安装gnome-tweaks
+function gnome_tweaks {
+	sudo apt install -y gnome-tweaks
+}
+
+# 11. 安装google-chrome
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+function chrome {
+	sudo dpkg -i files/google-chrome-stable_current_amd64.deb
 }
 
 #disable_kernel_moudle
 #change_apt_sources
-#setup_shadowsocks
-#setup_privoxy
-#apt_proxy
+update_apt_cache
+setup_shadowsocks
+setup_privoxy
+apt_proxy
+upgrade_system
+aria2
+sogou
