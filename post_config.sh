@@ -109,6 +109,8 @@ function install_fonts {
 }
 
 # 12. 修改登录界面背景图
+# https://segmentfault.com/q/1010000006118112
+# https://www.jianshu.com/p/2d1dc1ef9dcd
 function loginBackground {
 	cp files/iLUECx.jpg ~/Pictures/
 	sudo cp /usr/share/gnome-shell/theme/ubuntu.css{,.bak}
