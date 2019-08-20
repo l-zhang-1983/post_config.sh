@@ -114,12 +114,12 @@ function loginBackground {
 	sudo cp /usr/share/gnome-shell/theme/ubuntu.css{,.bak}
 	sudo sed -i "/^#lockDialogGroup/,/}$/d" /usr/share/gnome-shell/theme/ubuntu.css
 	sudo cat >> ubuntu.css<<-EOF
-	#lockDialogGroup {
-  	background: #2c001e url(file:///home/USER/Pictures/iLUECx.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center; }
-	EOF
+#lockDialogGroup {
+    background: #2c001e url(file:///home/USER/Pictures/iLUECx.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+EOF
 	sudo sed -i "s/USER/$(whoami)/g" /usr/share/gnome-shell/theme/ubuntu.css 
 }
 
