@@ -108,7 +108,22 @@ function install_fonts {
 	sudo fc-cache -frv
 }
 
-# 12. 安装google-chrome
+# 12. 修改登录界面背景图
+function loginBackground {
+	cp files/iLUECx.jpg ~/Pictures/
+	sudo cp /usr/share/gnome-shell/theme/ubuntu.css{,.bak}
+	sudo sed -i "/^#lockDialogGroup/,/}$/d" /usr/share/gnome-shell/theme/ubuntu.css
+	sudo cat >> ubuntu.css<<-EOF
+	#lockDialogGroup {
+  	background: #2c001e url(file:///home/USER/Pictures/iLUECx.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center; }
+	EOF
+	sudo sed -i "s/USER/$(whoami)/g" /usr/share/gnome-shell/theme/ubuntu.css 
+}
+
+# 13. 安装google-chrome
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 function chrome {
 	sudo dpkg -i files/google-chrome-stable_current_amd64.deb
