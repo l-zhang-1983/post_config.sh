@@ -91,7 +91,7 @@ function aria2 {
 
 # 9. 搜狗拼音输入法
 function sogou {
-	sudo apt install -y fcitx libfcitx-qt0 fcitx-libs-qt libopencc2 fcitx-libs libqtwebkit4
+	sudo apt install -y fcitx libfcitx-qt0 fcitx-libs-qt libopencc2 fcitx-libs libqtwebkit4 libqt4-declarative zip
 	im-config -n fcitx
 	sudo dpkg -i files/sogoupinyin_*_amd64.deb
 }
